@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+input {
+  font: 400 1.6rem/160% 'Mulish', sans-serif;
+  color: var(--text-primary);
+}
+
+#app {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: max-content 1fr max-content;
+}
+:root {
+  font-size: 62.5%;
+}
+
+:root {
+  --brand-primary: #065e7c;
+  --title-primary: #202024;
+  --text-primary: #121214;
+
+  --base-white: #ffffff;
+  --base-gray-100: #f4fcff;
+  --gray-300: #387e96;
+  --gray-500: #242424;
+}
+
+header {
+  background-color: var(--brand-primary);
+}
+
+header .container {
+  display: flex;
+  flex-direction: row;
+  padding: 1.2rem 2.8rem;
+  gap: 2.6rem;
+  align-items: center;
+}
+header .container img:last-child {
+  border-radius: 50%;
+}
+main {
+  margin-bottom: 3.2rem;
+}
+main img {
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 2.8rem;
+}
+main .container {
+  padding: 0 2.2rem;
+}
+main .container h1 {
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+main .container .button {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2.8rem;
+}
+
+main button {
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+}
+main button:active {
+  transform: scale(1.1);
+}
+form {
+  width: 100%;
+}
+form input {
+  width: 100%;
+  border: none;
+  color: var(--base-white);
+  border-radius: 4px;
+  padding: 1.2rem 1.6rem;
+  background-color: #ffffff20;
+}
+
+form input::placeholder {
+  font-weight: 600;
+  color: var(--base-white);
+}
+
+form label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 0 2.2rem;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+aside article {
+  height: 8.5rem;
+  gap: 1.6rem;
+}
+aside article img {
+  width: 15rem;
+  height: auto;
+  border-radius: 5px;
+}
+
+aside .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card div {
+  width: 21.5rem;
+  height: 8.23rem;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.card div h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.card div p {
+  font-size: 1.4rem;
+}
+footer {
+  font-weight: 600;
+  padding: 1.6rem;
+  text-align: center;
+  color: var(--base-white);
+  background-color: var(--gray-300);
+}
+@media (width > 1080px) {
+  #app {
+    grid-template-areas:
+      'header header header'
+      'main main aside'
+      'footer footer footer';
+  }
+
+  #app > header {
+    grid-area: header;
+    margin-bottom: 4rem;
+  }
+
+  #app > main {
+    grid-area: main;
+    margin-bottom: 4rem;
+    margin-inline: 12rem 3rem;
+  }
+
+  #app > aside {
+    width: 38rem;
+    height: 62rem;
+    grid-area: aside;
+    margin-right: 11rem;
+  }
+  #app > footer {
+    grid-area: footer;
+  }
+
+  .avaliation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  main img {
+    border-radius: 0.5rem;
+  }
+}

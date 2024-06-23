@@ -33,8 +33,11 @@ input {
 
 header {
   background-color: var(--brand-primary);
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-
+header a {
+  line-height: 0;
+}
 header .container {
   display: flex;
   flex-direction: row;
@@ -77,6 +80,9 @@ main button {
 main button:active {
   transform: scale(1.1);
 }
+main button:focus {
+  animation: flip-in-ver-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
 form {
   width: 100%;
 }
@@ -114,16 +120,20 @@ aside article {
   height: 8.5rem;
   gap: 1.6rem;
 }
-aside article img {
-  width: 15rem;
-  height: auto;
-  border-radius: 5px;
-}
-
 aside .card {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+aside .card img:hover {
+  animation: scale-up 1s infinite alternate;
+}
+
+aside .card img {
+  width: 15rem;
+  height: auto;
+  border-radius: 5px;
 }
 
 .card div {
@@ -147,6 +157,7 @@ footer {
   text-align: center;
   color: var(--base-white);
   background-color: var(--gray-300);
+  animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 @media (width > 1080px) {
   #app {
@@ -184,5 +195,55 @@ footer {
   }
   main img {
     border-radius: 0.5rem;
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flip-in-ver-right {
+  0% {
+    -webkit-transform: rotateY(-80deg);
+    transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
   }
 }

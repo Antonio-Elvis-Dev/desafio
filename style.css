@@ -21,14 +21,14 @@ input {
 }
 
 :root {
-  --brand-primary: #065e7c;
-  --title-primary: #202024;
-  --text-primary: #121214;
+  --brand-primary: hsl(195, 91%, 25%);
+  --title-primary: hsl(240, 6%, 13%);
+  --text-primary: hsl(240, 5%, 7%);
 
   --base-white: #ffffff;
-  --base-gray-100: #f4fcff;
-  --gray-300: #387e96;
-  --gray-500: #242424;
+  --base-gray-100: hsl(196, 100%, 98%);
+  --gray-300: hsl(195, 46%, 40%);
+  --gray-500: hsl(0, 0%, 14%);
 }
 
 header {
